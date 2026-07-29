@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #FAFAF8;
+  --color-foreground: #1A1A1A;
+  --color-muted: #737373;
+  --color-border: #E5E5E0;
+  --color-accent: #EA580C;
+  --color-accent-foreground: #FFFFFF;
+  --color-card: #FFFFFF;
+  --color-card-hover: #F5F5F0;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+/* Subtle selection highlight */
+::selection {
+  background-color: #EA580C;
+  color: #FFFFFF;
+}
