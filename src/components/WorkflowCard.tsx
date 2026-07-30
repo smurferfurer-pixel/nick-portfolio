@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import ToolLogo from "./ToolLogo";
 
 interface WorkflowCardProps {
   title: string;
@@ -37,14 +38,10 @@ export default function WorkflowCard({
         </div>
         <p className="text-sm leading-relaxed text-muted">{summary}</p>
       </div>
-      <div className="mt-4 flex flex-wrap gap-2">
+      {/* Tool logos row */}
+      <div className="mt-4 flex flex-wrap items-center gap-1.5">
         {tools.map((tool) => (
-          <span
-            key={tool}
-            className="rounded-md bg-background px-2.5 py-1 text-xs font-medium text-muted ring-1 ring-border"
-          >
-            {tool}
-          </span>
+          <ToolLogo key={tool} name={tool} size={16} showLabel />
         ))}
       </div>
     </motion.article>

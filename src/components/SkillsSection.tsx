@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import FadeIn from "./FadeIn";
+import ToolLogo from "./ToolLogo";
 import { fadeUp, stagger } from "@/lib/animations";
 
 const skillCategories = [
@@ -30,6 +31,25 @@ const skillCategories = [
     skills: ["GoHighLevel", "Tara AI", "Mailchimp", "HubSpot"],
   },
 ];
+
+// Tools that have brand logos (rest get a checkmark)
+const brandedTools = new Set([
+  "n8n",
+  "make.com",
+  "notion",
+  "openai",
+  "deepseek",
+  "gemini",
+  "google workspace",
+  "calendly",
+  "docusign",
+  "airtable",
+  "asana",
+  "slack",
+  "hubspot",
+  "mailchimp",
+  "zapier",
+]);
 
 export default function SkillsSection() {
   return (
@@ -59,16 +79,28 @@ export default function SkillsSection() {
                 <h3 className="mb-4 text-sm font-semibold text-foreground">
                   {cat.title}
                 </h3>
-                <ul className="space-y-2">
-                  {cat.skills.map((skill) => (
-                    <li
-                      key={skill}
-                      className="flex items-center gap-2 text-sm text-muted"
-                    >
-                      <CheckCircle size={14} className="text-accent" />
-                      {skill}
-                    </li>
-                  ))}
+                <ul className="space-y-3">
+                  {cat.skills.map((skill) => {
+                    const isBrand = brandedTools.has(skill.toLowerCase());
+                    return (
+                      <li
+                        key={skill}
+                        className="flex items-center gap-2 text-sm text-muted"
+                      >
+                        {isBrand ? (
+                          <>
+                            <ToolLogo name={skill} size={16} />
+                            <span>{skill}</span>
+                          </>
+                        ) : (
+                          <span className="inline-flex items-center gap-2">
+                            <CheckCircle size={14} className="text-accent shrink-0" />
+                            {skill}
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </motion.div>
             ))}

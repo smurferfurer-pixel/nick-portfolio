@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ToolLogo from "@/components/ToolLogo";
 import { workflows } from "@/lib/workflows";
 
 export default function WorkflowsIndexPage() {
@@ -30,7 +31,7 @@ export default function WorkflowsIndexPage() {
               <Link
                 key={w.slug}
                 href={`/workflows/${w.slug}`}
-                className="group rounded-lg border border-border bg-card p-6 transition-all hover:border-accent/30 hover:bg-card-hover hover:shadow-sm"
+                className="group rounded-lg border border-border bg-card p-6 transition-all hover:border-accent/30 hover:bg-card-hover hover:shadow-md"
               >
                 <h2 className="text-lg font-semibold text-foreground group-hover:text-accent">
                   {w.title}
@@ -38,14 +39,9 @@ export default function WorkflowsIndexPage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {w.summary}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap items-center gap-1.5">
                   {w.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-md bg-background px-2.5 py-1 text-xs font-medium text-muted ring-1 ring-border"
-                    >
-                      {tool}
-                    </span>
+                    <ToolLogo key={tool} name={tool} size={14} showLabel />
                   ))}
                 </div>
               </Link>

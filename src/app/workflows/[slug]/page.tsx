@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ToolLogo from "@/components/ToolLogo";
 import { workflows, getWorkflow } from "@/lib/workflows";
 
 export function generateStaticParams() {
@@ -30,14 +31,10 @@ export default async function WorkflowPage({
             <ArrowLeft size={14} /> All projects
           </Link>
 
-          <div className="mb-8 flex flex-wrap gap-2">
+          {/* Tool logos row */}
+          <div className="mb-8 flex flex-wrap items-center gap-2">
             {workflow.tools.map((tool) => (
-              <span
-                key={tool}
-                className="rounded-md bg-background px-2.5 py-1 text-xs font-medium text-muted ring-1 ring-border"
-              >
-                {tool}
-              </span>
+              <ToolLogo key={tool} name={tool} size={18} showLabel />
             ))}
           </div>
 
@@ -86,7 +83,7 @@ export default async function WorkflowPage({
             </p>
             <a
               href="/#contact"
-              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90"
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-accent-foreground shadow-sm transition-all hover:bg-accent/90 hover:shadow-md active:scale-[0.98]"
             >
               Book a Free Strategy Call
             </a>
