@@ -9,7 +9,7 @@ export default function ContactSection() {
   return (
     <section className="bg-background px-6 py-24">
       <FadeIn>
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-sm font-medium text-accent">Get in Touch</p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">

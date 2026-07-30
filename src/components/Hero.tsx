@@ -28,8 +28,8 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl">
-        <div className="max-w-3xl">
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="max-w-4xl">
           <motion.p
             initial="hidden"
             animate="visible"
@@ -75,7 +75,7 @@ export default function Hero() {
                 },
               },
             }}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-muted"
           >
             From lead capture to internal operations, I design workflows that
             eliminate repetitive work, reduce manual tasks, and make systems run

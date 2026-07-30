@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card shadow-sm">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a
           href="#"
           className="text-sm font-semibold tracking-tight text-foreground"

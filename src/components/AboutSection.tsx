@@ -19,7 +19,7 @@ export default function AboutSection() {
   return (
     <section className="bg-background px-6 py-24">
       <FadeIn>
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-7xl">
           {/* Bio */}
           <div className="grid gap-12 lg:grid-cols-5">
             <div className="lg:col-span-2">

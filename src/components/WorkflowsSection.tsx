@@ -21,7 +21,7 @@ export default function WorkflowsSection() {
   return (
     <section className="bg-card px-6 py-24">
       <FadeIn>
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <p className="mb-2 text-sm font-medium text-accent">Case Studies</p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
