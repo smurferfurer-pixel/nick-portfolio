@@ -35,7 +35,7 @@ export default function ContactSection() {
                 href="https://calendly.com/your-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-accent-foreground shadow-sm transition-shadow hover:shadow-md"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground shadow-sm transition-shadow hover:shadow-md"
               >
                 <Calendar size={16} />
                 Book Free Strategy Call
@@ -45,7 +45,7 @@ export default function ContactSection() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 href="mailto:stoninonicknelson@gmail.com"
-                className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
               >
                 <Mail size={16} />
                 Send an Email

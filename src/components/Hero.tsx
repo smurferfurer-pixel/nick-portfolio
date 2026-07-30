@@ -94,15 +94,15 @@ export default function Hero() {
           >
             <motion.a
               variants={fadeUp}
-              href="#work"
-              className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-accent-foreground shadow-sm transition-all hover:bg-accent/90 hover:shadow-md active:scale-[0.98]"
+              href="/workflows"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground shadow-sm transition-all hover:bg-accent/90 hover:shadow-md active:scale-[0.98]"
             >
               See My Work
             </motion.a>
             <motion.a
               variants={fadeUp}
               href="#contact"
-              className="rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+              className="rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
             >
               Book a Strategy Call
             </motion.a>
