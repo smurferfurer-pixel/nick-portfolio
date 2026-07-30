@@ -34,7 +34,7 @@ export default function WorkflowCard({
     <motion.article
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="group relative flex flex-col rounded-lg border border-border bg-card p-6 transition-shadow hover:border-accent/30 hover:bg-card-hover hover:shadow-md"
+      className="group relative flex flex-col rounded-lg border border-border bg-card p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-shadow hover:border-accent/30 hover:bg-card-hover hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1">

@@ -17,7 +17,7 @@ const certificates = [
 
 export default function AboutSection() {
   return (
-    <section className="bg-[#F3F0EA] px-6 py-24">
+    <section className="bg-background px-6 py-24">
       <FadeIn>
         <div className="mx-auto max-w-7xl">
           {/* Bio */}
@@ -75,7 +75,7 @@ export default function AboutSection() {
                   href={cert.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 transition-all hover:border-accent/30 hover:bg-card-hover hover:shadow-sm"
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all hover:border-accent/30 hover:bg-card-hover hover:shadow-md"
                 >
                   <ToolLogo name={cert.tool} size={22} />
                   <div className="min-w-0">

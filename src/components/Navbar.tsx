@@ -14,7 +14,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/30 bg-[#E8E4DA]/70 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a
           href="#"
