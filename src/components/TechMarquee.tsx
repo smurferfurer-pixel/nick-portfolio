@@ -41,13 +41,13 @@ const icons = [
 
 export default function TechMarquee() {
   return (
-    <div className="relative overflow-hidden bg-card py-10">
+    <div className="relative overflow-hidden bg-card pt-16 pb-6">
       {/* Fade edges */}
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-card to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-card to-transparent" />
 
       <motion.div
-        className="flex items-center gap-16"
+        className="flex items-center gap-20"
         animate={{ x: ["0%", "-50%"] }}
         transition={{
           repeat: Infinity,
@@ -58,7 +58,7 @@ export default function TechMarquee() {
         {/* Double the icons so the loop feels seamless */}
         {[...icons, ...icons].map((Icon, i) => (
           <span key={i} className="shrink-0" title={Icon.name?.replace("Si", "")}>
-            <Icon size={28} className="text-[#C5C5C0] transition-colors hover:text-muted" />
+            <Icon size={40} className="text-[#C5C5C0] transition-colors hover:text-muted" />
           </span>
         ))}
       </motion.div>
