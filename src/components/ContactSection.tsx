@@ -7,10 +7,8 @@ import { fadeUp, stagger } from "@/lib/animations";
 
 export default function ContactSection() {
   return (
-    <FadeIn>
-      <section id="contact" className="relative border-t border-border px-6 py-24">
-        {/* Subtle accent line at top */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-24 bg-accent/50" />
+    <section className="bg-background px-6 py-24">
+      <FadeIn>
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-sm font-medium text-accent">Get in Touch</p>
@@ -55,7 +53,7 @@ export default function ContactSection() {
             </motion.div>
           </div>
         </div>
-      </section>
-    </FadeIn>
+      </FadeIn>
+    </section>
   );
 }

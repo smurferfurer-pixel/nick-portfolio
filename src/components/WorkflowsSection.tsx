@@ -19,10 +19,8 @@ export default function WorkflowsSection() {
       : workflows.filter((w) => w.platform === active);
 
   return (
-    <FadeIn>
-      <section id="work" className="relative border-t border-border px-6 py-24">
-        {/* Subtle accent line at top */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-24 bg-accent/50" />
+    <section className="bg-card px-6 py-24">
+      <FadeIn>
         <div className="mx-auto max-w-5xl">
           <div className="mb-12">
             <p className="mb-2 text-sm font-medium text-accent">Case Studies</p>
@@ -104,7 +102,7 @@ export default function WorkflowsSection() {
             </Link>
           </motion.div>
         </div>
-      </section>
-    </FadeIn>
+      </FadeIn>
+    </section>
   );
 }

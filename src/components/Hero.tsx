@@ -5,13 +5,12 @@ import { fadeUp, stagger, staggerFast } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden px-6 pt-24">
+    <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden bg-background px-6 pt-24">
       {/* Subtle animated background mesh */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-accent/3 blur-[120px]" />
         <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-accent/2 blur-[100px]" />
         <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/1 blur-[80px]" />
-        {/* Subtle dot grid overlay */}
         <svg className="absolute inset-0 h-full w-full opacity-[0.03]">
           <defs>
             <pattern

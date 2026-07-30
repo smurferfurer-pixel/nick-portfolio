@@ -17,10 +17,8 @@ const certificates = [
 
 export default function AboutSection() {
   return (
-    <FadeIn>
-      <section id="about" className="relative border-t border-border px-6 py-24">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-24 bg-accent/50" />
-
+    <section className="bg-background px-6 py-24">
+      <FadeIn>
         <div className="mx-auto max-w-5xl">
           {/* Bio */}
           <div className="grid gap-12 lg:grid-cols-5">
@@ -91,7 +89,7 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-      </section>
-    </FadeIn>
+      </FadeIn>
+    </section>
   );
 }
