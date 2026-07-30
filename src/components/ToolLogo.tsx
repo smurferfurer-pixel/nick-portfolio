@@ -1,9 +1,13 @@
 import { IconType } from "react-icons";
 import {
   SiAirtable,
+  SiAnthropic,
   SiAsana,
   SiCalendly,
+  SiClaude,
   SiDeepseek,
+  SiGit,
+  SiGithub,
   SiGoogle,
   SiGooglecalendar,
   SiGooglesheets,
@@ -14,10 +18,11 @@ import {
   SiMake,
   SiN8N,
   SiNotion,
+  SiOpenaigym,
   SiZapier,
 } from "react-icons/si";
 import { FaSlack } from "react-icons/fa6";
-import { TbLetterT, TbLetterV, TbLetterD, TbLetterG, TbLetterO } from "react-icons/tb";
+import { TbLetterT, TbLetterV, TbLetterD, TbLetterG } from "react-icons/tb";
 
 interface BrandConfig {
   icon: IconType;
@@ -44,12 +49,15 @@ const brands: Record<string, BrandConfig> = {
   make: { icon: SiMake, label: "Make.com" },
   docusign: { icon: TbLetterD, label: "DocuSign" },
   twilio: { icon: TbLetterT, label: "Twilio" },
-  openai: { icon: TbLetterO, label: "OpenAI" },
+  openai: { icon: SiOpenaigym, label: "OpenAI" },
   vapi: { icon: TbLetterV, label: "Vapi" },
   gohighlevel: { icon: TbLetterG, label: "GHL" },
   "tara ai": { icon: TbLetterT, label: "Tara AI" },
   webhooks: { icon: SiZapier, label: "Webhooks" },
-  github: { icon: SiN8N, label: "GitHub" },
+  github: { icon: SiGithub, label: "GitHub" },
+  claude: { icon: SiClaude, label: "Claude" },
+  anthropic: { icon: SiAnthropic, label: "Anthropic" },
+  "hermes agent": { icon: SiN8N, label: "Hermes Agent" },
 };
 
 interface ToolLogoProps {

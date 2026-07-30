@@ -9,11 +9,11 @@ import { fadeUp, stagger } from "@/lib/animations";
 const skillCategories = [
   {
     title: "Automation & Workflows",
-    skills: ["n8n", "Make.com", "Webhooks", "API Integration"],
+    skills: ["n8n", "Make.com", "Zapier", "Webhooks", "API Integration"],
   },
   {
     title: "AI & Language Models",
-    skills: ["OpenAI", "DeepSeek", "Vapi", "Gemini"],
+    skills: ["OpenAI", "DeepSeek", "Claude", "Gemini", "Hermes Agent"],
   },
   {
     title: "Business Tools",
@@ -36,10 +36,13 @@ const skillCategories = [
 const brandedTools = new Set([
   "n8n",
   "make.com",
+  "zapier",
   "notion",
   "openai",
   "deepseek",
+  "claude",
   "gemini",
+  "hermes agent",
   "google workspace",
   "calendly",
   "docusign",
@@ -48,7 +51,6 @@ const brandedTools = new Set([
   "slack",
   "hubspot",
   "mailchimp",
-  "zapier",
 ]);
 
 export default function SkillsSection() {
