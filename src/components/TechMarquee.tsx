@@ -58,7 +58,7 @@ export default function TechMarquee() {
         {/* Double the icons so the loop feels seamless */}
         {[...icons, ...icons].map((Icon, i) => (
           <span key={i} className="shrink-0" title={Icon.name?.replace("Si", "")}>
-            <Icon size={28} className="text-muted/40 transition-colors hover:text-muted/70" />
+            <Icon size={28} className="text-[#C5C5C0] transition-colors hover:text-muted" />
           </span>
         ))}
       </motion.div>

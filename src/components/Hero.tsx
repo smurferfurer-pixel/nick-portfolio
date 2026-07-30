@@ -30,15 +30,17 @@ export default function Hero() {
 
       <div className="mx-auto w-full max-w-7xl">
         <div className="max-w-4xl">
+          {/* Eyebrow — more specific positioning */}
           <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             className="mb-4 text-sm font-medium text-accent"
           >
-            Automation Specialist · Remote Freelancer
+            Automation Specialist for Service Businesses
           </motion.p>
 
+          {/* Headline */}
           <motion.h1
             initial="hidden"
             animate="visible"
@@ -60,6 +62,7 @@ export default function Hero() {
             <span className="text-accent">focus on what matters</span>.
           </motion.h1>
 
+          {/* Subtext */}
           <motion.p
             initial="hidden"
             animate="visible"
@@ -82,11 +85,12 @@ export default function Hero() {
             themselves.
           </motion.p>
 
+          {/* Buttons — more breathing room */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerFast}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-10 flex flex-wrap gap-4"
           >
             <motion.a
               variants={fadeUp}
@@ -105,7 +109,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Quick stats row */}
+        {/* Stats row — strongest stat first */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -114,7 +118,7 @@ export default function Hero() {
           className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-10 sm:grid-cols-4"
         >
           {[
-            { value: "50+", label: "Hours saved monthly" },
+            { value: "500+", label: "Hours saved" },
             { value: "90%", label: "Tasks automated" },
             { value: "20+", label: "Businesses helped" },
             { value: "100%", label: "Client satisfaction" },
