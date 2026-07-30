@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -17,7 +20,11 @@ export default function WorkflowCard({
   const href = slug ? `/workflows/${slug}` : "#";
 
   const Content = (
-    <article className="group relative flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:border-accent/30 hover:bg-card-hover hover:shadow-sm">
+    <motion.article
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="group relative flex flex-col rounded-lg border border-border bg-card p-6 transition-shadow hover:border-accent/30 hover:bg-card-hover hover:shadow-md"
+    >
       <div className="flex-1">
         <div className="mb-2 flex items-center gap-2">
           <h3 className="text-lg font-semibold text-foreground">{title}</h3>
@@ -40,7 +47,7 @@ export default function WorkflowCard({
           </span>
         ))}
       </div>
-    </article>
+    </motion.article>
   );
 
   if (slug) {
