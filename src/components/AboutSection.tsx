@@ -2,17 +2,28 @@
 
 import Image from "next/image";
 import FadeIn from "./FadeIn";
+import ToolLogo from "./ToolLogo";
+
+const certificates = [
+  { label: "n8n Certification", file: "/certificates/n8n-cert.pdf", tool: "n8n" },
+  { label: "n8n Quickstart", file: "/certificates/n8n-quickstart.pdf", tool: "n8n" },
+  { label: "n8n 101", file: "/certificates/n8n-101.pdf", tool: "n8n" },
+  { label: "n8n 102", file: "/certificates/n8n-102.pdf", tool: "n8n" },
+  { label: "n8n 103", file: "/certificates/n8n-103.pdf", tool: "n8n" },
+  { label: "Zapier", file: "/certificates/zapier.pdf", tool: "Zapier" },
+  { label: "Make.com", file: "/certificates/make-com.pdf", tool: "Make.com" },
+  { label: "HighLevel", file: "/certificates/highlevel.pdf", tool: "GoHighLevel" },
+];
 
 export default function AboutSection() {
   return (
     <FadeIn>
       <section id="about" className="relative border-t border-border px-6 py-24">
-        {/* Subtle accent line at top */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-24 bg-accent/50" />
 
         <div className="mx-auto max-w-5xl">
+          {/* Bio */}
           <div className="grid gap-12 lg:grid-cols-5">
-            {/* Photo */}
             <div className="lg:col-span-2">
               <div className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl border border-border shadow-sm lg:mx-0">
                 <Image
@@ -25,7 +36,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Text */}
             <div className="lg:col-span-3">
               <p className="mb-2 text-sm font-medium text-accent">About Me</p>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -50,11 +60,34 @@ export default function AboutSection() {
                   and forget it&quot; — I do &quot;set it, test it, optimize it,
                   then hand it over with confidence.&quot;
                 </p>
-                <p className="text-foreground">
-                  <strong>Certifications:</strong> n8n Certified · Tara AI
-                  Certified · GHL Partner · Make.com · Zapier
-                </p>
               </div>
+            </div>
+          </div>
+
+          {/* Certificates */}
+          <div className="mt-16">
+            <p className="mb-2 text-sm font-medium text-accent">Certifications</p>
+            <h3 className="mb-6 text-2xl font-bold tracking-tight">
+              Platforms I&apos;m certified on
+            </h3>
+            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+              {certificates.map((cert) => (
+                <a
+                  key={cert.file}
+                  href={cert.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 transition-all hover:border-accent/30 hover:bg-card-hover hover:shadow-sm"
+                >
+                  <ToolLogo name={cert.tool} size={22} />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-foreground truncate">
+                      {cert.label}
+                    </p>
+                    <p className="text-xs text-muted">View PDF →</p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
