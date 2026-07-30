@@ -90,19 +90,19 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             variants={staggerFast}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-10 flex flex-wrap gap-6"
           >
             <motion.a
               variants={fadeUp}
               href="/workflows"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground shadow-sm transition-all hover:bg-accent/90 hover:shadow-md active:scale-[0.98]"
+              className="rounded-full bg-accent px-8 py-3.5 text-sm font-medium text-accent-foreground shadow-sm transition-all hover:bg-accent/90 hover:shadow-md active:scale-[0.98]"
             >
               See My Work
             </motion.a>
             <motion.a
               variants={fadeUp}
               href="#contact"
-              className="rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+              className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
             >
               Book a Strategy Call
             </motion.a>
