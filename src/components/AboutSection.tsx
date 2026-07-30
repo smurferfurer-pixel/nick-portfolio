@@ -17,7 +17,7 @@ const certificates = [
 
 export default function AboutSection() {
   return (
-    <section className="bg-background px-6 py-24">
+    <section className="bg-[#F3F0EA] px-6 py-24">
       <FadeIn>
         <div className="mx-auto max-w-7xl">
           {/* Bio */}
