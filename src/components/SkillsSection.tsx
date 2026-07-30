@@ -56,7 +56,9 @@ const brandedTools = new Set([
 export default function SkillsSection() {
   return (
     <FadeIn>
-      <section id="skills" className="border-t border-border px-6 py-24">
+      <section id="skills" className="relative border-t border-border px-6 py-24">
+        {/* Subtle accent line at top */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-24 bg-accent/50" />
         <div className="mx-auto max-w-5xl">
           <div className="mb-12">
             <p className="mb-2 text-sm font-medium text-accent">Tools & Skills</p>

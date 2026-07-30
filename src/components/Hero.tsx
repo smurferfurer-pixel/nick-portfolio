@@ -5,7 +5,30 @@ import { fadeUp, stagger, staggerFast } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[90vh] flex-col justify-center px-6 pt-24">
+    <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden px-6 pt-24">
+      {/* Subtle animated background mesh */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-accent/3 blur-[120px]" />
+        <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-accent/2 blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/1 blur-[80px]" />
+        {/* Subtle dot grid overlay */}
+        <svg className="absolute inset-0 h-full w-full opacity-[0.03]">
+          <defs>
+            <pattern
+              id="hero-dots"
+              x={0}
+              y={0}
+              width={24}
+              height={24}
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx={2} cy={2} r={1} fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hero-dots)" />
+        </svg>
+      </div>
+
       <div className="mx-auto w-full max-w-5xl">
         <div className="max-w-3xl">
           <motion.p
@@ -25,7 +48,11 @@ export default function Hero() {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] },
+                transition: {
+                  duration: 0.6,
+                  delay: 0.15,
+                  ease: [0.25, 0.1, 0.25, 1],
+                },
               },
             }}
             className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
@@ -42,7 +69,11 @@ export default function Hero() {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.5, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] },
+                transition: {
+                  duration: 0.5,
+                  delay: 0.35,
+                  ease: [0.25, 0.1, 0.25, 1],
+                },
               },
             }}
             className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
