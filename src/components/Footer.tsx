@@ -19,7 +19,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/your-github"
+            href="https://github.com/smurferfurer-pixel"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-accent"
