@@ -23,7 +23,7 @@ export default function WorkflowsIndexPage() {
     <>
       <Navbar />
       <main className="px-6 pt-32 pb-24">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-7xl">
           <Link
             href="/"
             className="mb-8 inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-accent"
@@ -87,6 +87,7 @@ export default function WorkflowsIndexPage() {
                   tools={w.tools}
                   slug={w.slug}
                   platform={w.platform}
+                  screenshot={w.screenshot}
                 />
               </motion.div>
             ))}

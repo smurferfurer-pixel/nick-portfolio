@@ -82,6 +82,7 @@ export default function WorkflowsSection() {
                   tools={w.tools}
                   slug={w.slug}
                   platform={w.platform}
+                  screenshot={w.screenshot}
                 />
               </motion.div>
             ))}
