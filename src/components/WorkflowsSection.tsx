@@ -1,15 +1,22 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import WorkflowCard from "./WorkflowCard";
 import FadeIn from "./FadeIn";
 import { fadeUp, stagger } from "@/lib/animations";
-import { workflows } from "@/lib/workflows";
+import { workflows, platforms, type Platform } from "@/lib/workflows";
+import { cn } from "@/lib/utils";
 
 export default function WorkflowsSection() {
-  const featured = workflows.slice(0, 3);
+  const [active, setActive] = useState<"all" | Platform>("all");
+
+  const filtered =
+    active === "all"
+      ? workflows
+      : workflows.filter((w) => w.platform === active);
 
   return (
     <FadeIn>
@@ -26,20 +33,55 @@ export default function WorkflowsSection() {
             </p>
           </div>
 
+          {/* Platform filter tabs */}
+          <div className="mb-8 flex flex-wrap gap-2">
+            <button
+              onClick={() => setActive("all")}
+              className={cn(
+                "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+                active === "all"
+                  ? "bg-accent text-accent-foreground"
+                  : "bg-background text-muted ring-1 ring-border hover:text-foreground"
+              )}
+            >
+              All ({workflows.length})
+            </button>
+            {platforms.map((p) => {
+              const count = workflows.filter((w) => w.platform === p).length;
+              if (count === 0) return null;
+              return (
+                <button
+                  key={p}
+                  onClick={() => setActive(p)}
+                  className={cn(
+                    "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+                    active === p
+                      ? "bg-accent text-accent-foreground"
+                      : "bg-background text-muted ring-1 ring-border hover:text-foreground"
+                  )}
+                >
+                  {p} ({count})
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Workflow cards */}
           <motion.div
+            key={active}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-40px" }}
+            animate="visible"
             variants={stagger}
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {featured.map((w) => (
+            {filtered.slice(0, 6).map((w) => (
               <motion.div key={w.slug} variants={fadeUp}>
                 <WorkflowCard
                   title={w.title}
                   summary={w.summary}
                   tools={w.tools}
                   slug={w.slug}
+                  platform={w.platform}
                 />
               </motion.div>
             ))}

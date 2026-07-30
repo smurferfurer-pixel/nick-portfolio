@@ -1,11 +1,24 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ToolLogo from "@/components/ToolLogo";
-import { workflows } from "@/lib/workflows";
+import WorkflowCard from "@/components/WorkflowCard";
+import { fadeUp, stagger } from "@/lib/animations";
+import { workflows, platforms, type Platform } from "@/lib/workflows";
+import { cn } from "@/lib/utils";
 
 export default function WorkflowsIndexPage() {
+  const [active, setActive] = useState<"all" | Platform>("all");
+
+  const filtered =
+    active === "all"
+      ? workflows
+      : workflows.filter((w) => w.platform === active);
+
   return (
     <>
       <Navbar />
@@ -22,31 +35,62 @@ export default function WorkflowsIndexPage() {
             All Projects
           </h1>
           <p className="mt-3 max-w-xl text-muted">
-            Every automation system I&apos;ve built — from small integrations to
-            full operational workflows.
+            Browse all automation systems by platform. Click any project to see
+            the full case study.
           </p>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {workflows.map((w) => (
-              <Link
-                key={w.slug}
-                href={`/workflows/${w.slug}`}
-                className="group rounded-lg border border-border bg-card p-6 transition-all hover:border-accent/30 hover:bg-card-hover hover:shadow-md"
-              >
-                <h2 className="text-lg font-semibold text-foreground group-hover:text-accent">
-                  {w.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {w.summary}
-                </p>
-                <div className="mt-4 flex flex-wrap items-center gap-1.5">
-                  {w.tools.map((tool) => (
-                    <ToolLogo key={tool} name={tool} size={14} showLabel />
-                  ))}
-                </div>
-              </Link>
-            ))}
+          {/* Platform filter tabs */}
+          <div className="mb-10 mt-8 flex flex-wrap gap-2">
+            <button
+              onClick={() => setActive("all")}
+              className={cn(
+                "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+                active === "all"
+                  ? "bg-accent text-accent-foreground"
+                  : "bg-background text-muted ring-1 ring-border hover:text-foreground"
+              )}
+            >
+              All ({workflows.length})
+            </button>
+            {platforms.map((p) => {
+              const count = workflows.filter((w) => w.platform === p).length;
+              if (count === 0) return null;
+              return (
+                <button
+                  key={p}
+                  onClick={() => setActive(p)}
+                  className={cn(
+                    "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+                    active === p
+                      ? "bg-accent text-accent-foreground"
+                      : "bg-background text-muted ring-1 ring-border hover:text-foreground"
+                  )}
+                >
+                  {p} ({count})
+                </button>
+              );
+            })}
           </div>
+
+          <motion.div
+            key={active}
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {filtered.map((w) => (
+              <motion.div key={w.slug} variants={fadeUp}>
+                <WorkflowCard
+                  title={w.title}
+                  summary={w.summary}
+                  tools={w.tools}
+                  slug={w.slug}
+                  platform={w.platform}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </main>
       <Footer />
