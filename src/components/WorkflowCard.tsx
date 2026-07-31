@@ -41,7 +41,7 @@ export default function WorkflowCard({
     >
       {/* Screenshot thumbnail */}
       {screenshot && (
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-background ring-1 ring-inset ring-card">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-background">
           {/* Base scale keeps image edge always outside the clip — no seam possible */}
           <Image
             src={screenshot}
@@ -50,8 +50,6 @@ export default function WorkflowCard({
             className="scale-[1.06] transform-gpu object-cover object-left-top transition-transform duration-300 will-change-transform group-hover:scale-[1.1]"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          {/* Gradient overlay at bottom of image */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card to-transparent" />
         </div>
       )}
 
