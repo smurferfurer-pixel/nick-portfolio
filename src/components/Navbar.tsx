@@ -1,8 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "./ThemeProvider";
 
 const navItems = [
   { label: "Work", href: "#work" },
@@ -12,6 +13,7 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { theme, toggle } = useTheme();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
@@ -24,7 +26,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
               <a
@@ -36,6 +38,15 @@ export default function Navbar() {
             </li>
           ))}
           <li>
+            <button
+              onClick={toggle}
+              aria-label="Toggle dark mode"
+              className="rounded-full border border-border bg-background p-2 text-muted transition-colors hover:text-accent"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+          </li>
+          <li>
             <a
               href="#contact"
               className="rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90"
@@ -46,13 +57,21 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile toggle */}
-        <button
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            onClick={toggle}
+            aria-label="Toggle dark mode"
+            className="rounded-full border border-border bg-background p-2 text-muted transition-colors hover:text-accent"
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile nav */}

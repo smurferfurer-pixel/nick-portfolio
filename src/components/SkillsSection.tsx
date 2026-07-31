@@ -80,7 +80,7 @@ export default function SkillsSection() {
               <motion.div
                 key={cat.title}
                 variants={fadeUp}
-                className="rounded-xl bg-[#F5F5F0] p-6"
+                className="rounded-xl bg-card-hover p-6"
               >
                 <h3 className="mb-5 text-sm font-semibold text-foreground">
                   {cat.title}

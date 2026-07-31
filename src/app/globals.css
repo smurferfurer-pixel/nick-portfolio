@@ -1,14 +1,45 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (toggled via .dark on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #FAFAF8;
+  --foreground: #1A1A1A;
+  --muted: #737373;
+  --border: #E5E5E0;
+  --accent: #EA580C;
+  --accent-foreground: #FFFFFF;
+  --card: #FFFFFF;
+  --card-hover: #F5F5F0;
+  --footer: #F0F0EC;
+  --marquee: #C5C5C0;
+}
+
+.dark {
+  --background: #141412;
+  --foreground: #EDEDE9;
+  --muted: #A3A39C;
+  --border: #2A2A26;
+  --accent: #F97316;
+  --accent-foreground: #FFFFFF;
+  --card: #1C1C1A;
+  --card-hover: #242422;
+  --footer: #0F0F0D;
+  --marquee: #3A3A35;
+}
+
 @theme inline {
-  --color-background: #FAFAF8;
-  --color-foreground: #1A1A1A;
-  --color-muted: #737373;
-  --color-border: #E5E5E0;
-  --color-accent: #EA580C;
-  --color-accent-foreground: #FFFFFF;
-  --color-card: #FFFFFF;
-  --color-card-hover: #F5F5F0;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-footer: var(--footer);
+  --color-marquee: var(--marquee);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -29,6 +60,6 @@ body {
 
 /* Subtle selection highlight */
 ::selection {
-  background-color: #EA580C;
+  background-color: var(--accent);
   color: #FFFFFF;
 }
