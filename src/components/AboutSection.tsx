@@ -21,13 +21,13 @@ function LinkedinIcon({ size = 16 }: { size?: number }) {
 
 const certificates = [
   { label: "n8n Certification", file: "/certificates/n8n-cert.pdf", tool: "n8n" },
-  { label: "n8n Quickstart", file: "/certificates/n8n-quickstart.pdf", tool: "n8n" },
-  { label: "n8n 101", file: "/certificates/n8n-101.pdf", tool: "n8n" },
-  { label: "n8n 102", file: "/certificates/n8n-102.pdf", tool: "n8n" },
-  { label: "n8n 103", file: "/certificates/n8n-103.pdf", tool: "n8n" },
-  { label: "Zapier", file: "/certificates/zapier.pdf", tool: "Zapier" },
-  { label: "Make.com", file: "/certificates/make-com.pdf", tool: "Make.com" },
-  { label: "HighLevel", file: "/certificates/highlevel.pdf", tool: "GoHighLevel" },
+  { label: "n8n Quickstart Certification", file: "/certificates/n8n-quickstart.pdf", tool: "n8n" },
+  { label: "n8n 101 Certification", file: "/certificates/n8n-101.pdf", tool: "n8n" },
+  { label: "n8n 102 Certification", file: "/certificates/n8n-102.pdf", tool: "n8n" },
+  { label: "n8n 103 Certification", file: "/certificates/n8n-103.pdf", tool: "n8n" },
+  { label: "Zapier Certification", file: "/certificates/zapier.pdf", tool: "Zapier" },
+  { label: "Make.com Certification", file: "/certificates/make-com.pdf", tool: "Make.com" },
+  { label: "HighLevel Certification", file: "/certificates/highlevel.pdf", tool: "GoHighLevel" },
 ];
 
 export default function AboutSection() {
