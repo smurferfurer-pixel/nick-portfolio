@@ -42,15 +42,18 @@ export default function WorkflowCard({
       {/* Screenshot thumbnail */}
       {screenshot && (
         <div className="relative aspect-[16/9] w-full overflow-hidden bg-background">
-          <Image
-            src={screenshot}
-            alt={title}
-            fill
-            className="object-cover object-left-top transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
+          {/* Wrapper is always 4px oversized so the scaled image edge never shows */}
+          <div className="absolute -inset-1 transform-gpu transition-transform duration-300 will-change-transform group-hover:scale-[1.03]">
+            <Image
+              src={screenshot}
+              alt={title}
+              fill
+              className="object-cover object-left-top"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          </div>
           {/* Gradient overlay at bottom of image */}
-          <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card to-transparent" />
         </div>
       )}
 
