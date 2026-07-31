@@ -19,7 +19,7 @@ export default function WorkflowsSection() {
       : workflows.filter((w) => w.platform === active);
 
   return (
-    <section className="bg-card px-6 py-24">
+    <section id="work" className="bg-card px-6 py-24">
       <FadeIn>
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">

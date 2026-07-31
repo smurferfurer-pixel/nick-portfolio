@@ -10,7 +10,7 @@ const CALENDLY_URL = "https://calendly.com/stoninonicknelson";
 
 export default function ContactSection() {
   return (
-    <section className="bg-background px-6 py-24">
+    <section id="contact" className="bg-background px-6 py-24">
       <FadeIn>
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
