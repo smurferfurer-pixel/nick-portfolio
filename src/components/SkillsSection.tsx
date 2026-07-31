@@ -60,7 +60,7 @@ export default function SkillsSection() {
             <p className="mb-2 text-sm font-medium text-accent">
               Tools & Skills
             </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
               What I work with
             </h2>
             <p className="mt-3 max-w-xl text-muted">

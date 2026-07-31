@@ -24,7 +24,7 @@ export default function WorkflowsSection() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <p className="mb-2 text-sm font-medium text-accent">Case Studies</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
               Automation systems built for real business growth
             </h2>
             <p className="mt-3 max-w-xl text-muted">

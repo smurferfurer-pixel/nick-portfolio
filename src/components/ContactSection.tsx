@@ -12,7 +12,7 @@ export default function ContactSection() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-sm font-medium text-accent">Get in Touch</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
               Let&apos;s automate the work slowing your business down
             </h2>
             <p className="mt-3 text-muted">
