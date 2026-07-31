@@ -41,7 +41,7 @@ export default function WorkflowCard({
     >
       {/* Screenshot thumbnail */}
       {screenshot && (
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-background">
+        <div className="relative -mb-0.5 aspect-[16/9] w-full overflow-hidden bg-card">
           {/* Base scale keeps image edge always outside the clip — no seam possible */}
           <Image
             src={screenshot}
