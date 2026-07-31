@@ -1,9 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { useTheme } from "./ThemeProvider";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { label: "Work", href: "#work" },
@@ -13,7 +12,6 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { theme, toggle } = useTheme();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
@@ -38,13 +36,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <button
-              onClick={toggle}
-              aria-label="Toggle dark mode"
-              className="rounded-full border border-border bg-background p-2 text-muted transition-colors hover:text-accent"
-            >
-              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
+            <ThemeToggle />
           </li>
           <li>
             <a
@@ -58,17 +50,8 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <div className="flex items-center gap-3 md:hidden">
-          <button
-            onClick={toggle}
-            aria-label="Toggle dark mode"
-            className="rounded-full border border-border bg-background p-2 text-muted transition-colors hover:text-accent"
-          >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
-          <button
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
+          <ThemeToggle />
+          <button onClick={() => setOpen(!open)} aria-label="Toggle menu">
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
